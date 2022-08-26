@@ -4,6 +4,93 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --ba-bg_accent: #00a883;
+    --ba-bg: #e2e1dd;
+    --ba-fg_accent: #fff;
+    --ba-fg: #f1f2f6;
+    --ba-alert: #53beec; 
+    --ba-text: #546570;
+
+    /* Distanza spaziatura App */
+    --ba-vertical-distance: 2rem;
+    --ba-orizzontal-distance: 1.5rem;
+}
 html{
-    font-weight: 'Open sans', sans-serif;
+    font-family: 'Open sans', sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: var(--ba-bg);
+}
+/* Reset Rules */
+img{
+    display: block;
+    max-width: 100%;
+}
+/* Layout */
+.container{
+    margin: 0 auto;
+    max-width: 1100px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+/* Compontent */
+.green_bar{
+    height: 150px;
+    background-color: var(--ba-bg_accent);
+}
+.boolzapp_wrapper{
+    height: 100%;
+    position: relative;
+}
+/* Boolzapp */
+.boolzapp{
+    position: absolute;
+    top: var(--ba-vertical-distance);
+    left: var(--ba-orizzontal-distance);
+    right: var(--ba-orizzontal-distance);
+    bottom: var(--ba-vertical-distance);
+    
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    color: var(--ba-text);
+    background-color: var(--ba-fg);
+}
+/* Contact >> Left */
+.contact_wrapper > .profile_wrapper{
+    align-items: center;
+    border-right: 1px solid #bbb;
+}
+.contact_wrapper .profile_info{
+    padding: 0.5rem;
+}
+.col.profile_info{
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+}
+.profile_info > .img_wrapper > .img_profile{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center;
+}
+.profile_info > .name_wrapper > .name_profile{
+    margin-left: 0.5rem;
+}
+.col.profile_button{
+    margin-left: auto;
+    margin-right: 1rem;
+    flex-direction: row;
+}
+.col.profile_button > *{
+    cursor: pointer;
+    margin: 0 0.5rem;
 }
