@@ -28,6 +28,14 @@ img{
     display: block;
     max-width: 100%;
 }
+input{
+    border: 0px solid;
+    color: currentColor;
+    background-color: transparent;
+}
+i{
+    color: currentColor;
+}
 /* Layout */
 .container{
     margin: 0 auto;
@@ -64,11 +72,11 @@ img{
     background-color: var(--ba-fg);
 }
 /* Contact >> Left */
-.contact_wrapper > .profile_wrapper{
+.side-bar > .profile_wrapper{
     align-items: center;
-    border-right: 1px solid #bbb;
+    border-right: 1px solid #ddd;
 }
-.contact_wrapper .profile_info{
+.side-bar .profile_info{
     padding: 0.5rem;
 }
 .col.profile_info{
@@ -93,4 +101,25 @@ img{
 .col.profile_button > *{
     cursor: pointer;
     margin: 0 0.5rem;
+}
+/* Contact >> Search Bar */
+.contact_wrapper{
+    padding: 0.75rem 0.5rem;
+}
+.contact_wrapper .search-bar_wrapper{
+    flex-grow: 1;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--ba-fg_accent);
+}
+.row.search-bar{
+    align-items: center;
+}
+.search-bar_wrapper > .search-bar > i{
+    padding: 0 1rem;
+}
+.search-bar_wrapper > .search-bar > input[type="text"]{
+    flex-grow: 1;
+    padding: 0 1rem;
+    line-height: 1.5rem;
 }
