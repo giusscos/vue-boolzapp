@@ -15,6 +15,9 @@
     /* Distanza spaziatura App */
     --ba-vertical-distance: 2rem;
     --ba-orizzontal-distance: 1.5rem;
+
+    /* Grandezza testo */
+    --ba-sub_text: 0.75rem;
 }
 html{
     font-family: 'Open sans', sans-serif;
@@ -93,7 +96,7 @@ ul{
     border-radius: 50%;
     object-position: center;
 }
-.profile_info > .name_wrapper > .name_profile{
+.profile_info > .name_wrapper{
     margin-left: 0.5rem;
 }
 .col.profile_button{
@@ -137,10 +140,11 @@ ul{
     flex-grow: 1;
 }
 .chats_list .list_item{
+    cursor: pointer;
     padding: 1rem 0.5rem;
     border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
     transition: 300ms ease-in-out;
+    border-bottom: 1px solid #ddd;
 }
 .chats_list .list_item:hover{
     background-color: var(--ba-fg);
@@ -163,5 +167,41 @@ ul{
 .time,
 .info-contact_wrapper .last_mex{
     opacity: 0.6;
-    font-size: 0.75rem;
+    font-size: var(--ba-sub_text);
+}
+/* Chat */
+.chat_wrapper > .profile-contact_wrapper{
+    align-items: center;
+    border-right: 1px solid #ddd;
+}
+.chat_wrapper .profile-contact_info{
+    padding: 0.5rem;
+}
+.col.profile-contact_info{
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+}
+.profile-contact_info > .img_wrapper > .img_profile{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center;
+}
+.profile-contact_info > .name_wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+}
+.profile-contact_info > .name_wrapper > .status{
+    font-size: var(--ba-sub_text);
+}
+.col.profile-contact_button{
+    margin-left: auto;
+    margin-right: 1rem;
+    flex-direction: row;
+}
+.col.profile-contact_button > *{
+    cursor: pointer;
+    margin: 0 0.5rem;
 }
