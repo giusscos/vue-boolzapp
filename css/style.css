@@ -11,6 +11,7 @@
     --ba-fg: #f1f2f6;
     --ba-alert: #53beec; 
     --ba-text: #546570;
+    --ba-bg_user_message: #dcf8c6;
 
     /* Distanza spaziatura App */
     --ba-vertical-distance: 2rem;
@@ -23,6 +24,7 @@ html{
     font-family: 'Open sans', sans-serif;
 }
 body{
+    min-width: 670px;
     height: 100vh;
     background-color: var(--ba-bg);
 }
@@ -169,7 +171,11 @@ ul{
     opacity: 0.6;
     font-size: var(--ba-sub_text);
 }
-/* Chat */
+/* Chat >> Chat Bar */
+.chat_wrapper{
+    display: flex;
+    flex-direction: column;
+}
 .chat_wrapper > .profile-contact_wrapper{
     align-items: center;
     border-right: 1px solid #ddd;
@@ -204,4 +210,40 @@ ul{
 .col.profile-contact_button > *{
     cursor: pointer;
     margin: 0 0.5rem;
+}
+/* Chat >> Chat messagges */
+.chat-content_wrapper{
+    padding: 1.5rem 1rem;
+    flex-grow: 1;
+    background-size: contain;
+    background-position: center; 
+    background-image: url(../img/mine.jpg);
+}
+.mesasges_wrapper{
+    width: 100%;
+}
+.messages_list{
+    flex-direction: column;
+}
+.messages_list > .massage_item{
+    position: relative;
+    padding: 1rem;
+    margin: 1rem 0;
+    min-width: 150px;
+    border-radius: 0.8rem;
+    padding-bottom: 1.30rem;
+    background-color: var(--ba-fg);
+}
+.messages_list > .massage_item.user{
+    margin-left: auto;
+    background-color: var(--ba-bg_user_message);
+}
+.messages_list > .massage_item.contact{
+    margin-right: auto;
+}
+.massage_item > .message_time{
+    font-size: var(--ba-sub_text);
+    position: absolute;
+    bottom: 0.25rem;
+    right: 0.5rem;
 }
