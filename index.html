@@ -9,9 +9,10 @@
     </title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
 </head>
 <body>
-    <div class="boolzapp_wrapper">
+    <div class="boolzapp_wrapper" id="app">
         <div class="green_bar">
              <!-- Barra Verde -->
         </div>
@@ -49,13 +50,18 @@
                     </div>
                     <div class="row contact-chats_wrapper">
                         <ul class="col chats_list">
-                            <li class="row list_item">
+                            <li class="row list_item"
+                                v-for="contact in contacts"
+                            >
                                 <div class="col img-contact_wrapper">
-                                    <img height="50" src="./img/avatar_1.jpg" alt="">
+                                    <img height="50" 
+                                    :src="contact.avatar" 
+                                    :alt="contact.avatar"
+                                    >
                                 </div>
                                 <div class="col info-contact_wrapper">
                                     <span class="name_contact">
-                                        Marco Rossi
+                                        {{ contact.name }}
                                     </span>
                                     <span class="last_mex">
                                         Ciao, sei libero domani&quest;
