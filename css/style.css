@@ -63,6 +63,7 @@ ul{
     background-color: var(--ba-bg_accent);
 }
 .boolzapp_wrapper{
+    overflow-y: hidden;
     height: 100%;
     position: relative;
 }
@@ -76,15 +77,31 @@ ul{
     
     display: grid;
     grid-template-columns: 5fr 7fr;
+    grid-template-areas: 
+    'prf-bar-info prf-bar'
+    'prf-bar-info chat'
+    'chat-contact chat'
+    'chat-contact chat'
+    'chat-contact chat'
+    'chat-contact chat'
+    'chat-contact chat'
+    'chat-contact input';
     color: var(--ba-text);
-    background-color: var(--ba-fg);
 }
 /* Contact >> Left */
-.side-bar > .profile_wrapper{
+.side-bar{
+    grid-area: chat-contact;
+    overflow-y: auto;
+}
+/* .side-bar > */
+.profile_wrapper{
+    grid-area: prf-bar-info;
     align-items: center;
     border-right: 1px solid #ddd;
+    background-color: var(--ba-fg);
 }
-.side-bar .profile_info{
+/* .side-bar  */
+.profile_info{
     padding: 0.5rem;
 }
 .col.profile_info{
@@ -112,10 +129,7 @@ ul{
     margin: 0 0.5rem;
 }
 /* Contact >> Search Bar */
-.contact_wrapper{
-    padding: 0.75rem 0;
-}
-.contact_wrapper .search-bar_wrapper{
+.search-bar_wrapper{
     flex-grow: 1;
     padding: 0 0.5rem;
     margin: 0 0.5rem;
@@ -173,14 +187,21 @@ ul{
 }
 /* Chat >> Chat Bar */
 .chat_wrapper{
+    overflow: auto;
     display: flex;
     flex-direction: column;
+    grid-area: chat;
 }
-.chat_wrapper > .profile-contact_wrapper{
+/* .chat_wrapper >  */
+.profile-contact_wrapper{
+    grid-area: prf-bar;
     align-items: center;
+    height: fit-content;
     border-right: 1px solid #ddd;
+    background-color: var(--ba-fg);
 }
-.chat_wrapper .profile-contact_info{
+/* .chat_wrapper  */
+.profile-contact_info{
     padding: 0.5rem;
 }
 .col.profile-contact_info{
@@ -213,8 +234,8 @@ ul{
 }
 /* Chat >> Chat messagges */
 .chat-content_wrapper{
-    padding: 1.5rem 1rem;
     flex-grow: 1;
+    padding: 1.5rem 1rem;
     background-size: contain;
     background-position: center; 
     background-image: url(../img/mine.jpg);
@@ -249,6 +270,7 @@ ul{
 }
 /* Chat >> Input */
 .input-text_wrapper{
+    grid-area: input;
     padding: 0.5rem 1.5rem;
     align-items: center;
     background-color: var(--ba-bg);

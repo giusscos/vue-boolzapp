@@ -17,37 +17,63 @@
              <!-- Barra Verde -->
         </div>
         <div class="boolzapp container"> <!-- Contenitore App -->
+            <div class="row profile_wrapper"> <!-- Barra Profilo -->
+                <div class="col profile_info"> <!-- Info Profilo -->
+                    <div class="img_wrapper">
+                        <img class="img_profile" height="50" src="./img/profile.JPG" alt="Giusscos">
+                    </div>
+                    <div class="name_wrapper">
+                        <span class="name_profile">
+                            Giuseppe
+                        </span>
+                    </div>
+                </div> <!-- Info Profilo Fine -->
+                <div class="col profile_button"> <!-- Storie e Impostazioni -->
+                    <div class="stories_wrapper">
+                        <i class="fa-solid fa-circle-notch"></i>
+                    </div>
+                    <div class="chat_wrapper">
+                        <i class="fa-solid fa-message"></i>
+                    </div>
+                    <div class="menu_wrapper">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <div class="col search-bar_wrapper">
+                    <div class="row search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Cerca o inizia una nuova Chat">
+                    </div>
+                </div>
+            </div> <!-- Barra Profile Fine -->
+            <div class="row profile-contact_wrapper"> <!-- Barra Profilo Contatto -->
+                <div class="col profile-contact_info"> <!-- Info Profilo Contatto -->
+                    <div class="img_wrapper">
+                        <img class="img_profile" height="50" src="./img/avatar_1.jpg" alt="Giusscos">
+                    </div>
+                    <div class="name_wrapper">
+                        <span class="name_profile">
+                            Marco Rossi
+                        </span>
+                        <span class="status">
+                            Ultimo accesso alle 12:00
+                        </span>
+                    </div>
+                </div> <!-- Info Profilo Contatto Fine -->
+                <div class="col profile-contact_button"> <!-- Bottoni e Menu' -->
+                    <div class="stories_wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="chat_wrapper">
+                        <i class="fa-solid fa-paperclip"></i>
+                    </div>
+                    <div class="menu_wrapper">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+            </div> <!-- Barra Profilo Contatto Fine -->
             <div class="side-bar">  <!-- Contatti e Profilo -->
-                <div class="row profile_wrapper"> <!-- Barra Profilo -->
-                    <div class="col profile_info"> <!-- Info Profilo -->
-                        <div class="img_wrapper">
-                            <img class="img_profile" height="50" src="./img/profile.JPG" alt="Giusscos">
-                        </div>
-                        <div class="name_wrapper">
-                            <span class="name_profile">
-                                Giuseppe Pio Cosenza
-                            </span>
-                        </div>
-                    </div> <!-- Info Profilo Fine -->
-                    <div class="col profile_button"> <!-- Storie e Impostazioni -->
-                        <div class="stories_wrapper">
-                            <i class="fa-solid fa-circle-notch"></i>
-                        </div>
-                        <div class="chat_wrapper">
-                            <i class="fa-solid fa-message"></i>
-                        </div>
-                        <div class="menu_wrapper">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </div>
-                    </div>
-                </div> <!-- Barra Profile Fine -->
                 <div class="row contact_wrapper"> <!-- Selezione Contatti -->
-                    <div class="col search-bar_wrapper">
-                        <div class="row search-bar">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova Chat">
-                        </div>
-                    </div>
                     <div class="row contact-chats_wrapper">
                         <ul class="col chats_list">
                             <li class="row list_item"
@@ -78,32 +104,6 @@
                 </div> <!-- Selezione Contatti Fine -->
             </div> <!-- Contatti e Profilo Fine -->
             <div class="chat_wrapper">
-                <div class="row profile-contact_wrapper"> <!-- Barra Profilo Contatto -->
-                    <div class="col profile-contact_info"> <!-- Info Profilo Contatto -->
-                        <div class="img_wrapper">
-                            <img class="img_profile" height="50" src="./img/avatar_1.jpg" alt="Giusscos">
-                        </div>
-                        <div class="name_wrapper">
-                            <span class="name_profile">
-                                Marco Rossi
-                            </span>
-                            <span class="status">
-                                Ultimo accesso alle 12:00
-                            </span>
-                        </div>
-                    </div> <!-- Info Profilo Contatto Fine -->
-                    <div class="col profile-contact_button"> <!-- Bottoni e Menu' -->
-                        <div class="stories_wrapper">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                        <div class="chat_wrapper">
-                            <i class="fa-solid fa-paperclip"></i>
-                        </div>
-                        <div class="menu_wrapper">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </div>
-                    </div>
-                </div> <!-- Barra Profilo Contatto Fine -->
                 <div class="row chat-content_wrapper">
                     <div class="col mesasges_wrapper"> <!-- Messaggi Chat -->
                         <ul class="row messages_list">
@@ -123,21 +123,69 @@
                                     18:00
                                 </span>
                             </li>
+                            <li class="col massage_item user">
+                                <span class="message_text">
+                                    Hai portato il cane a spasso?    
+                                </span>
+                                <span class="message_time">
+                                    15:00
+                                </span>
+                            </li>
+                            <li class="col massage_item contact">
+                                <span class="message_text">
+                                    Yep
+                                </span>
+                                <span class="message_time">
+                                    18:00
+                                </span>
+                            </li>
+                            <li class="col massage_item user">
+                                <span class="message_text">
+                                    Hai portato il cane a spasso?    
+                                </span>
+                                <span class="message_time">
+                                    15:00
+                                </span>
+                            </li>
+                            <li class="col massage_item contact">
+                                <span class="message_text">
+                                    Yep
+                                </span>
+                                <span class="message_time">
+                                    18:00
+                                </span>
+                            </li>
+                            <li class="col massage_item user">
+                                <span class="message_text">
+                                    Hai portato il cane a spasso?    
+                                </span>
+                                <span class="message_time">
+                                    15:00
+                                </span>
+                            </li>
+                            <li class="col massage_item contact">
+                                <span class="message_text">
+                                    Yep
+                                </span>
+                                <span class="message_time">
+                                    18:00
+                                </span>
+                            </li>
                         </ul>
                     </div> <!-- Messaggi Chat Fine -->
                 </div>
-                <div class="row input-text_wrapper">
-                    <div class="col input-emoticon_wrapper">
-                        <i class="fa-regular fa-face-smile"></i>
-                    </div>
-                    <div class="col input-message_wrapper">
-                        <input class="input_message" type="text" placeholder="Scrivi un messaggio">
-                    </div>
-                    <div class="col input-message-audio_wrapper">
-                        <i class="fa-solid fa-microphone"></i>
-                    </div>
-                </div>
             </div> <!-- Contenitore Chat Fine-->
+            <div class="row input-text_wrapper">
+                <div class="col input-emoticon_wrapper">
+                    <i class="fa-regular fa-face-smile"></i>
+                </div>
+                <div class="col input-message_wrapper">
+                    <input class="input_message" type="text" placeholder="Scrivi un messaggio">
+                </div>
+                <div class="col input-message-audio_wrapper">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
         </div> <!-- Contenitore App Fine -->
     </div>
     <script src="./js/app.js"></script>
