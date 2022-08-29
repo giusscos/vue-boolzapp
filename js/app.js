@@ -169,12 +169,13 @@ const app = new Vue({
         currentContactChat: '',
         currentContactInfo: '',
         currentChat: new Array(),
+        currentIndex: new Array(),
         i: 0,
     },
     computed:{
         getChat(){
             this.currentChat = []
-            console.log(this.currentChat)
+            // console.log(this.currentChat)
             
             for(this.i in this.currentContactChat){
                 this.currentChat.push(this.currentContactChat[this.i]) 
@@ -182,7 +183,7 @@ const app = new Vue({
             return this.currentChat
         },
         getInfo(){
-            console.log(this.currentContactInfo)
+            // console.log(this.currentContactInfo)
             this.currentContactInfo = this.currentContactInfo
 
             return this.currentContactInfo
@@ -190,10 +191,12 @@ const app = new Vue({
     },
     methods: {
         setChat(i){
-            this.setInfo(i)      
+            this.setInfo(i) 
             return this.currentContactChat = this.contacts[i].messages
         },
         setInfo(j){
+            this.contacts[j].visible = !this.contacts[j].visible
+
             // console.log(this.contacts[j].name)
             return this.currentContactInfo = this.contacts[j]
         }

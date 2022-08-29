@@ -85,6 +85,7 @@
                             <li class="row list_item"
                                 v-for="(contact, i) in contacts"
                                 @click="setChat(i)"
+                                :class="contact.visible ? '' : 'active'"
                             >
                                 <div class="col img-contact_wrapper">
                                     <img height="50" 
