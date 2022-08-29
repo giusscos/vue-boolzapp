@@ -169,6 +169,7 @@ ul{
     transition: 300ms ease-in-out;
     border-bottom: 1px solid #ddd;
 }
+.chats_list .list_item.active,
 .chats_list .list_item:hover{
     background-color: var(--ba-fg);
 }
@@ -263,11 +264,11 @@ ul{
     padding-bottom: 1.30rem;
     background-color: var(--ba-fg);
 }
-.messages_list > .massage_item.user{
+.messages_list > .massage_item.sent{
     margin-left: auto;
     background-color: var(--ba-bg_user_message);
 }
-.messages_list > .massage_item.contact{
+.messages_list > .massage_item.received{
     margin-right: auto;
 }
 .massage_item > .message_time{
