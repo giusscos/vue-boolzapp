@@ -169,7 +169,6 @@ const app = new Vue({
         currentContactChat: '',
         currentContactInfo: '',
         currentChat: new Array(),
-        currentIndex: new Array(),
         i: 0,
     },
     computed:{
