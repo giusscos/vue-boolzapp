@@ -169,6 +169,8 @@ const app = new Vue({
         currentContactChat: '',
         currentContactInfo: '',
         currentChat: new Array(),
+        typedMessage: ' ',
+        responseMessage: '',
         i: 0,
     },
     computed:{
@@ -179,6 +181,7 @@ const app = new Vue({
             for(this.i in this.currentContactChat){
                 this.currentChat.push(this.currentContactChat[this.i]) 
             }
+            
             return this.currentChat
         },
         getInfo(){
@@ -198,6 +201,26 @@ const app = new Vue({
 
             // console.log(this.contacts[j].name)
             return this.currentContactInfo = this.contacts[j]
+        },
+        sendMessage(){
+            this.currentContactInfo.messages.push(
+                {
+                    date: '10/01/2020 15:30:55',
+                    message: this.typedMessage,
+                    status: 'sent'
+                })
+                this.receveidMessage()
+            this.typedMessage = ''
+        },
+        receveidMessage(){
+            setTimeout(() => {
+                this.currentContactInfo.messages.push(
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Halo',
+                        status: 'received'
+                    })
+            }, 1000)
         }
     }
 });
