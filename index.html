@@ -105,29 +105,17 @@
                 <div class="row chat-content_wrapper">
                     <div class="col mesasges_wrapper"> <!-- Messaggi Chat -->
                         <ul class="row messages_list">
-                            <!-- <template
-                            v-for="contact in contacts"
-                            >
-                                <li class="col massage_item"
-                                    v-for="chat in contact.messages"
-                                    :class="chat.status"
-                                > -->
-                                <li class="col massage_item"
-                                v-for="status in getStatus"
-                                :class="status"
-                                >
-                                <template 
+                            <li class="col massage_item"
                                 v-for="chat in getChat"
-                                >
-                                    <span class="message_text">
-                                        {{ chat }}
-                                    </span>
-                                    <span class="message_time">
-                                        12:00
-                                    </span>
-                                </template>
-                                </li>
-                            <!-- </template> -->
+                                :class="chat.status"
+                            >
+                                <span class="message_text">
+                                    {{ chat.message }}
+                                </span>
+                                <span class="message_time">
+                                    {{ chat.date }}
+                                </span>
+                            </li>
                         </ul>
                     </div> <!-- Messaggi Chat Fine -->
                 </div>

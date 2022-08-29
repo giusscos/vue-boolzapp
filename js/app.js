@@ -169,25 +169,18 @@ const app = new Vue({
         currentContact: '',
         currentChat: new Array(),
         currentStatus: new Array(),
+        currentDate: new Array(),
         i: '',
     },
     computed:{
         getChat(){
             this.currentChat = []
             for(this.i in this.currentContact){
-                this.currentChat.push(this.currentContact[this.i].message) 
+                this.currentChat.push(this.currentContact[this.i]) 
                 console.log(this.currentChat)
             }
             return this.currentChat
         },
-        getStatus(){
-            this.currentStatus = []
-            for(this.i in this.currentContact){
-                this.currentStatus.push(this.currentContact[this.i].status) 
-                console.log(this.currentStatus)
-            }
-            return this.currentStatus
-        }
     },
     methods: {
         setActive(i){
