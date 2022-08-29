@@ -44,28 +44,37 @@
                 </div>
             </div> <!-- Barra Profilo Fine -->
             <div class="row profile-contact_wrapper"> <!-- Barra Profilo Contatto -->
-                <div class="col profile-contact_info"> <!-- Info Profilo Contatto -->
+                <div class="col profile-contact_info"
+                    v-if="getInfo"
+                > <!-- Info Profilo Contatto -->
                     <div class="img_wrapper">
-                        <img class="img_profile" height="50" src="./img/avatar_1.jpg" alt="Giusscos">
+                        <img class="img_profile" height="50" 
+                        :src="getInfo.avatar" 
+                        :alt="`Immagine profilo di ${getInfo.avatar}`">
                     </div>
                     <div class="name_wrapper">
                         <span class="name_profile">
-                            Marco Rossi
+                            {{ getInfo.name}}
                         </span>
                         <span class="status">
                             Ultimo accesso alle 12:00
                         </span>
                     </div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div> <!-- Info Profilo Contatto Fine -->
-                <div class="col profile-contact_button"> <!-- Bottoni e Menu' -->
-                    <div class="stories_wrapper">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="col profile-contact_info"
+                    v-else
+                > <!-- Info Profilo Contatto -->
+                    <div class="img_wrapper">
                     </div>
-                    <div class="chat_wrapper">
-                        <i class="fa-solid fa-paperclip"></i>
-                    </div>
-                    <div class="menu_wrapper">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="name_wrapper">
+                        <span class="name_profile">
+                            Seleziona una Chat!
+                        </span>
+                        <span class="status">
+                        </span>
                     </div>
                 </div>
             </div> <!-- Barra Profilo Contatto Fine -->
@@ -75,7 +84,7 @@
                         <ul class="col chats_list">
                             <li class="row list_item"
                                 v-for="(contact, i) in contacts"
-                                @click="setActive(i)"
+                                @click="setChat(i)"
                             >
                                 <div class="col img-contact_wrapper">
                                     <img height="50" 
@@ -88,7 +97,7 @@
                                         {{ contact.name }}
                                     </span>
                                     <span class="last_mex">
-                                        Ciao, sei libero domani&quest;
+                                        Ultimo messaggio                                           
                                     </span>
                                 </div>
                                 <div class="col info_time">

@@ -166,26 +166,36 @@ const app = new Vue({
     el: '#app',
     data: {
         contacts,
-        currentContact: '',
+        currentContactChat: '',
+        currentContactInfo: '',
         currentChat: new Array(),
-        currentStatus: new Array(),
-        currentDate: new Array(),
-        i: '',
+        i: 0,
     },
     computed:{
         getChat(){
             this.currentChat = []
-            for(this.i in this.currentContact){
-                this.currentChat.push(this.currentContact[this.i]) 
-                console.log(this.currentChat)
+            console.log(this.currentChat)
+            
+            for(this.i in this.currentContactChat){
+                this.currentChat.push(this.currentContactChat[this.i]) 
             }
             return this.currentChat
         },
+        getInfo(){
+            console.log(this.currentContactInfo)
+            this.currentContactInfo = this.currentContactInfo
+
+            return this.currentContactInfo
+        }
     },
     methods: {
-        setActive(i){
-            this.currentContact = this.contacts[i].messages
-            return this.currentContact
+        setChat(i){
+            this.setInfo(i)      
+            return this.currentContactChat = this.contacts[i].messages
+        },
+        setInfo(j){
+            // console.log(this.contacts[j].name)
+            return this.currentContactInfo = this.contacts[j]
         }
     }
 });
