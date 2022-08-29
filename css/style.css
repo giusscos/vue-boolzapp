@@ -27,6 +27,7 @@ body{
     min-width: 670px;
     height: 100vh;
     background-color: var(--ba-bg);
+    background: linear-gradient(0deg, rgba(212,226,213,1) 0%, rgba(222,226,221,1) 20%, rgba(221,226,221,1) 85%, rgba(0,168,131,1) 85%);
 }
 /* Reset Rules */
 img{
@@ -108,6 +109,7 @@ ul{
     flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
+    margin-right: auto;
 }
 .profile_info > .img_wrapper > .img_profile{
     aspect-ratio: 1/1;
@@ -119,8 +121,7 @@ ul{
     margin-left: 0.5rem;
 }
 .col.profile_button{
-    margin-left: auto;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     flex-direction: row;
     align-items: center;
 }
@@ -131,6 +132,7 @@ ul{
 /* Contact >> Search Bar */
 .search-bar_wrapper{
     flex-grow: 1;
+    flex-basis: 100%;
     padding: 0 0.5rem;
     margin: 0 0.5rem;
     margin-bottom: 0.5rem;
@@ -138,14 +140,19 @@ ul{
     background-color: var(--ba-fg_accent);
 }
 .row.search-bar{
+    position: relative;
     align-items: center;
 }
 .search-bar_wrapper > .search-bar > i{
-    padding: 0 1rem;
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translate(-50%, -50%);
 }
 .search-bar_wrapper > .search-bar > input[type="text"]{
     flex-grow: 1;
     padding: 0.75rem 1rem;
+    padding-left: 2rem;
 }
 /* Contact >> Chat list */
 .contact-chats_wrapper{
@@ -227,6 +234,7 @@ ul{
     margin-left: auto;
     margin-right: 1rem;
     flex-direction: row;
+    align-items: center;
 }
 .col.profile-contact_button > *{
     cursor: pointer;
