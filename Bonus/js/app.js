@@ -200,7 +200,7 @@ const app = new Vue ({
             setTimeout(() => {
                 const contactMessage = {
                     date: '10/01/2020 15:30:55',
-                    message: 'Viva HomeLander',
+                    message: 'Viva Homelander',
                     status: 'received'
                 }
                 temp.push(contactMessage)

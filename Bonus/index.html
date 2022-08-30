@@ -38,7 +38,7 @@
             <ul class="chats_list"
                 v-if="!userSearch"
             >
-                <li class="row list_item"
+                <li class="row list_item" 
                     @click="setCurrentContact(contact)"
                     v-for="(contact, i) in contacts"
                 >
@@ -67,7 +67,7 @@
             >
                 <li class="row list_item"
                     @click="setCurrentContact(contact)"
-                    v-for="contact in searchContact"
+                    v-for="(contact,i) in searchContact"
                 >
                     <div class="col img-contact_wrapper">
                         <img
@@ -78,12 +78,12 @@
                             {{ contact.name }}
                         </span>
                         <span class="last_mex">
-                            
+                            {{ contact.messages[lastMessage(i)].message }}
                         </span>
                     </div>
                     <div class="col info_time">
                         <span class="time">
-        
+                            {{ contact.messages[lastMessage(i)].date.split(' ')[1].toString() }}
                         </span>
                     </div>
                 </li>
