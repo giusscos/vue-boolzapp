@@ -112,6 +112,13 @@
                     v-for="(element, i) in currentContact.messages"
                     :class="element.status"
                 >
+                    <div class="dropdown">
+                        <span class="down_arrow">^</span>
+                        <div class="dropdown-content">
+                            <p>Info Messaggio</p>
+                            <p @click="deleteMessage(i)">Cancella Messaggio</p>
+                        </div>
+                    </div>
                     <span class="message_text">
                         {{ element.message }}
                     </span>

@@ -208,6 +208,54 @@ ul{
     padding: 0.5rem 1rem 1.35rem;
     background-color: var(--ba-fg);
 }
+.down_arrow{
+    transform: rotate(180deg);
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px #bbb;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 0.5rem;
+    transition: 300ms ease-in-out;
+}
+.sent:hover .down_arrow{
+    opacity: 1;
+    background-color: var(--ba-bg_user_message);
+}
+.receveid:hover .down_arrow{
+    opacity: 1;
+    background-color: var(--ba-bg_user_message);
+}
+/* dropdown message */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+.dropdown-content > p{
+    opacity: 0.7;
+    padding: 0.5rem 0;
+    transition: 300ms ease-in-out;
+}
+.dropdown-content > p:hover{
+    opacity: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 .messages_list > .massage_item.sent{
     margin-left: auto;
     background-color: var(--ba-bg_user_message);
