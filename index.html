@@ -31,14 +31,42 @@
                 <div class="col search-bar_wrapper">
                     <div class="row search-bar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova Chat">
+                        <input v-model="userSearch" type="text" placeholder="Cerca o inizia una nuova Chat">
                     </div>
                 </div>
             </div>
-            <ul class="chats_list">
+            <ul class="chats_list"
+            v-if="!userSearch"
+            >
                 <li class="row list_item"
                     @click="setCurrentContact(contact)"
                     v-for="contact in contacts"
+                >
+                    <div class="col img-contact_wrapper">
+                        <img
+                        :src="contact.avatar">
+                    </div>
+                    <div class="col info-contact_wrapper">
+                        <span class="name_contact">
+                            {{ contact.name }}
+                        </span>
+                        <span class="last_mex">
+                            Ultimo messaggio                                           
+                        </span>
+                    </div>
+                    <div class="col info_time">
+                        <span class="time">
+                            12:00
+                        </span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="chats_list"
+            v-else
+            >
+                <li class="row list_item"
+                    @click="setCurrentContact(contact)"
+                    v-for="contact in searchContact"
                 >
                     <div class="col img-contact_wrapper">
                         <img

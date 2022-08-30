@@ -166,24 +166,31 @@ const app = new Vue ({
     el: '#app',
     data:{
         contacts,
-        // currentIndex: 3,
         currentContact: contacts[0],
         userMessage: '',
+        userSearch: ''
+    },
+    computed:{
+        searchContact(){
+            const inputRawMsg = this.userSearch.trim()
+            if(inputRawMsg === '') return
+
+            const result = this.contacts.filter(res => res.name.toLowerCase().includes(inputRawMsg.toLowerCase()))
+            // console.log(result)
+            
+            return result
+        }
     },
     methods:{
-        // setCurrentIndex(i){
-        //     this.currentIndex = i
-        // },
         setCurrentContact(contact){
-            // console.log('Before', this.currenContact)
             this.currentContact = contact
-            // console.log('After', this.currenContact)
+            // console.log(this.currenContact)
         },
         sendMessage(){
-            // console.log(this.currentContact.messages)
-            const inputRawMsg = this.userMessage.trim()
             const temp = this.currentContact.messages
+            // console.log(temp)
 
+            const inputRawMsg = this.userMessage.trim()
             if(inputRawMsg === '') return
             
             const message = {
@@ -191,7 +198,6 @@ const app = new Vue ({
                 message: inputRawMsg,
                 status: 'sent'
             }
-            
             temp.push(message)
 
             setTimeout(() => {
