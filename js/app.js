@@ -172,13 +172,10 @@ const app = new Vue ({
     },
     computed:{
         searchContact(){
-            const inputRawMsg = this.userSearch.trim()
-            if(inputRawMsg === '') return
-
-            const result = this.contacts.filter(res => res.name.toLowerCase().includes(inputRawMsg.toLowerCase()))
-            // console.log(result)
+            let inputRawMsg = this.userSearch.trim()
+            if(inputRawMsg === '') inputRawMsg = ''
             
-            return result
+            return this.contacts.filter(res => res.name.toLowerCase().includes(inputRawMsg.toLowerCase()))
         }
     },
     methods:{
