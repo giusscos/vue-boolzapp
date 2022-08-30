@@ -166,17 +166,44 @@ const app = new Vue ({
     el: '#app',
     data:{
         contacts,
-        currentIndex: 3,
-        currentContact: contacts[0]
+        // currentIndex: 3,
+        currentContact: contacts[0],
+        userMessage: '',
     },
     methods:{
-        setCurrentIndex(i){
-            this.currentIndex = i
-        },
+        // setCurrentIndex(i){
+        //     this.currentIndex = i
+        // },
         setCurrentContact(contact){
             // console.log('Before', this.currenContact)
             this.currentContact = contact
             // console.log('After', this.currenContact)
+        },
+        sendMessage(){
+            // console.log(this.currentContact.messages)
+            const inputRawMsg = this.userMessage.trim()
+            const temp = this.currentContact.messages
+
+            if(inputRawMsg === '') return
+            
+            const message = {
+                date: '10/01/2020 15:30:55',
+                message: inputRawMsg,
+                status: 'sent'
+            }
+            
+            temp.push(message)
+
+            setTimeout(() => {
+                const contactMessage = {
+                    date: '10/01/2020 15:30:55',
+                    message: 'Viva HomeLander',
+                    status: 'received'
+                }
+                temp.push(contactMessage)
+            },1000)
+
+            this.userMessage = ''
         }
     }
 })
