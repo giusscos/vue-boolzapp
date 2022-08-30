@@ -176,9 +176,6 @@ const app = new Vue ({
             if(inputRawMsg === '') inputRawMsg = ''
             
             return this.contacts.filter(res => res.name.toLowerCase().includes(inputRawMsg.toLowerCase()))
-        },
-        lastMessage(){
-            return this.currentContact.messages.length - 1
         }
     },
     methods:{
@@ -214,6 +211,9 @@ const app = new Vue ({
         deleteMessage(i){
             this.currentContact.messages.splice(i,1)
             // console.log(contacts)
+        },
+        lastMessage(i){
+            return this.contacts[i].messages.length - 1
         }
     }
 })

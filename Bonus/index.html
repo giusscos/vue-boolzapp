@@ -52,12 +52,12 @@
                         </span>
                         <span class="last_mex"
                         >
-                            {{ contact.messages[lastMessage - 1].message }}
+                            {{ contact.messages[lastMessage(i)].message }}
                         </span>
                     </div>
                     <div class="col info_time">
                         <span class="time">
-                            {{ contact.messages[lastMessage - 1].date.split(' ').toString() }}
+                            {{ contact.messages[lastMessage(i)].date.split(' ')[1].toString() }}
                         </span>
                     </div>
                 </li>
