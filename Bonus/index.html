@@ -40,7 +40,7 @@
             >
                 <li class="row list_item"
                     @click="setCurrentContact(contact)"
-                    v-for="contact in contacts"
+                    v-for="(contact, i) in contacts"
                 >
                     <div class="col img-contact_wrapper">
                         <img
@@ -50,13 +50,14 @@
                         <span class="name_contact">
                             {{ contact.name }}
                         </span>
-                        <span class="last_mex">
-                            Ultimo messaggio                                           
+                        <span class="last_mex"
+                        >
+                            {{ contact.messages[lastMessage - 1].message }}
                         </span>
                     </div>
                     <div class="col info_time">
                         <span class="time">
-                            12:00
+                            {{ contact.messages[lastMessage - 1].date.split(' ').toString() }}
                         </span>
                     </div>
                 </li>
@@ -77,12 +78,12 @@
                             {{ contact.name }}
                         </span>
                         <span class="last_mex">
-                            Ultimo messaggio                                           
+                            
                         </span>
                     </div>
                     <div class="col info_time">
                         <span class="time">
-                            12:00
+        
                         </span>
                     </div>
                 </li>

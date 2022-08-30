@@ -62,9 +62,10 @@ ul{
 }
 /* Contact >> Left */
 .side_bar{
+    overflow-y: auto;
     min-width: 220px;
-    background-color: var(--ba-fg_accent);
     flex-basis: 350px;
+    background-color: var(--ba-fg_accent);
 }
 .side_bar > .row{
     flex-direction: column;

@@ -168,7 +168,7 @@ const app = new Vue ({
         contacts,
         currentContact: contacts[0],
         userMessage: '',
-        userSearch: ''
+        userSearch: '',
     },
     computed:{
         searchContact(){
@@ -176,6 +176,9 @@ const app = new Vue ({
             if(inputRawMsg === '') inputRawMsg = ''
             
             return this.contacts.filter(res => res.name.toLowerCase().includes(inputRawMsg.toLowerCase()))
+        },
+        lastMessage(){
+            return this.currentContact.messages.length - 1
         }
     },
     methods:{

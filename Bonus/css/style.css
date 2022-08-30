@@ -62,9 +62,10 @@ ul{
 }
 /* Contact >> Left */
 .side_bar{
+    overflow-y: auto;
     min-width: 220px;
-    background-color: var(--ba-fg_accent);
     flex-basis: 350px;
+    background-color: var(--ba-fg_accent);
 }
 .side_bar > .row{
     flex-direction: column;
@@ -229,9 +230,16 @@ ul{
     opacity: 1;
     background-color: var(--ba-bg_user_message);
 }
-.receveid:hover .down_arrow{
+.received:hover .down_arrow{
     opacity: 1;
+    background-color: var(--ba-fg);
+}
+.messages_list > .massage_item.sent{
+    margin-left: auto;
     background-color: var(--ba-bg_user_message);
+}
+.messages_list > .massage_item.received{
+    margin-right: auto;
 }
 /* dropdown message */
 .dropdown-content {
@@ -255,13 +263,6 @@ ul{
 }
 .dropdown:hover .dropdown-content {
     display: block;
-}
-.messages_list > .massage_item.sent{
-    margin-left: auto;
-    background-color: var(--ba-bg_user_message);
-}
-.messages_list > .massage_item.received{
-    margin-right: auto;
 }
 .massage_item > .message_time{
     font-size: var(--ba-sub_text);
