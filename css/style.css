@@ -44,6 +44,7 @@ ul{
 .container{
     margin: 0 auto;
     max-width: 800px;
+    height: 95vh;
 }
 .row{
     display: flex;
@@ -55,41 +56,21 @@ ul{
 }
 /* Compontent */
 .boolzapp_wrapper{
-    overflow-y: hidden;
-}
-/* Boolzapp */
-.boolzapp{
     display: flex;
+    padding: 2rem 0 0;
     color: var(--ba-text);
-
-    /* display: grid;
-    grid-template-columns: 5fr 7fr;
-    grid-template-areas: 
-    'prf-bar-info prf-bar'
-    'prf-bar-info chat'
-    'chat-contact chat'
-    'chat-contact chat'
-    'chat-contact chat'
-    'chat-contact chat'
-    'chat-contact chat'
-    'chat-contact input'; */
-
 }
 /* Contact >> Left */
 .side_bar{
-    /* grid-area: chat-contact; */
-    overflow-y: auto;
     min-width: 220px;
+    background-color: var(--ba-fg_accent);
     flex-basis: 350px;
 }
-/* .side-bar > */
 .side_bar > .row{
-    /* grid-area: prf-bar-info; */
     flex-direction: column;
     border-right: 1px solid #ddd;
     background-color: var(--ba-fg);
 }
-/* .side-bar  */
 .col.profile_info{
     padding: 0.5rem;
     align-items: center;
@@ -139,15 +120,12 @@ ul{
     padding-left: 2rem;
 }
 /* Contact >> Chat list */
-.contact{
+.chats_list{
     background-color: var(--ba-fg_accent);
-}
-.contact_wrapper > .chats_list{
-    flex-grow: 1;
 }
 .chats_list .list_item{
     cursor: pointer;
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     border-top: 1px solid #ddd;
     transition: 300ms ease-in-out;
 }
@@ -156,6 +134,7 @@ ul{
     background-color: var(--ba-fg);
 }
 .img-contact_wrapper > img {
+    height: 50px;
     object-fit: cover;
     aspect-ratio: 1/1;
     border-radius: 50%; 
@@ -187,19 +166,10 @@ ul{
     background-position: center bottom; 
     background-image: url(../img/mine.jpg);
 }
-/* .chat_wrapper >  */
-.profile-contact_wrapper{
-    /* grid-area: prf-bar; */
-    align-items: center;
-    border-right: 1px solid #ddd;
-    background-color: var(--ba-fg);
-}
-/* .chat_wrapper  */
-.col.profile-contact_info{
-    flex-grow: 1;
+.profile-contact_info{
     padding: 0.5rem;
     align-items: center;
-    flex-direction: row;
+    background-color: var(--ba-fg);
 }
 .profile-contact_info > .img_wrapper > .img_profile{
     height: 50px;
@@ -223,21 +193,9 @@ ul{
     margin-right: 0.75rem;
 }
 /* Chat >> Chat messagges */
-.chat_wrapper{
-    overflow-y: auto;
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    /* grid-area: chat; */
-}
-.chat-content_wrapper{
+.messages_list{
     flex-grow: 1;
     padding: 1.5rem 1rem;
-}
-.mesasges_wrapper{
-    flex-grow: 1;
-}
-.messages_list{
     flex-direction: column;
 }
 .messages_list > .massage_item{
@@ -264,7 +222,6 @@ ul{
 }
 /* Chat >> Input */
 .input-text_wrapper{
-    /* grid-area: input; */
     flex-wrap: nowrap;
     align-items: center;
     padding: 0.5rem 1.5rem;

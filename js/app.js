@@ -162,65 +162,84 @@ const contacts =  [
     }
 ];
 
-const app = new Vue({
+const app = new Vue ({
     el: '#app',
-    data: {
+    data:{
         contacts,
-        currentContactChat: '',
-        currentContactInfo: '',
-        currentChat: new Array(),
-        typedMessage: '',
-        responseMessage: '',
-        i: 0,
+        currentIndex: 3,
+        currentContact: contacts[0]
     },
-    computed:{
-        getChat(){
-            this.currentChat = []
-            // console.log(this.currentChat)
-            
-            for(this.i in this.currentContactChat){
-                this.currentChat.push(this.currentContactChat[this.i]) 
-            }
-            
-            return this.currentChat
+    methods:{
+        setCurrentIndex(i){
+            this.currentIndex = i
         },
-        getInfo(){
-            // console.log(this.currentContactInfo)
-            this.currentContactInfo = this.currentContactInfo
-
-            return this.currentContactInfo
-        }
-    },
-    methods: {
-        setChat(i){
-            this.setInfo(i) 
-            return this.currentContactChat = this.contacts[i].messages
-        },
-        setInfo(j){
-            this.contacts[j].visible = !this.contacts[j].visible
-
-            // console.log(this.contacts[j].name)
-            return this.currentContactInfo = this.contacts[j]
-        },
-        sendMessage(){
-            this.currentContactInfo.messages.push(
-                {
-                    date: '10/01/2020 15:30:55',
-                    message: this.typedMessage,
-                    status: 'sent'
-                })
-                this.receveidMessage()
-            this.typedMessage = ''
-        },
-        receveidMessage(){
-            setTimeout(() => {
-                this.currentContactInfo.messages.push(
-                    {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Halo',
-                        status: 'received'
-                    })
-            }, 1000)
+        setCurrentContact(contact){
+            // console.log('Before', this.currenContact)
+            this.currentContact = contact
+            // console.log('After', this.currenContact)
         }
     }
-});
+})
+
+// const app = new Vue({
+//     el: '#app',
+//     data: {
+//         contacts,
+//         currentContactChat: '',
+//         currentContactInfo: '',
+//         currentChat: new Array(),
+//         typedMessage: '',
+//         responseMessage: '',
+//         i: 0,
+//     },
+//     computed:{
+//         getChat(){
+//             this.currentChat = []
+//             // console.log(this.currentChat)
+            
+//             for(this.i in this.currentContactChat){
+//                 this.currentChat.push(this.currentContactChat[this.i]) 
+//             }
+            
+//             return this.currentChat
+//         },
+//         getInfo(){
+//             // console.log(this.currentContactInfo)
+//             this.currentContactInfo = this.currentContactInfo
+
+//             return this.currentContactInfo
+//         }
+//     },
+//     methods: {
+//         setChat(i){
+//             this.setInfo(i) 
+//             return this.currentContactChat = this.contacts[i].messages
+//         },
+//         setInfo(j){
+//             this.contacts[j].visible = !this.contacts[j].visible
+
+//             // console.log(this.contacts[j].name)
+//             return this.currentContactInfo = this.contacts[j]
+//         },
+//         sendMessage(){
+//             this.currentContactInfo.messages.push(
+//                 {
+//                     date: '10/01/2020 15:30:55',
+//                     message: this.typedMessage,
+//                     status: 'sent'
+//                 })
+//                 this.receveidMessage()
+//             this.typedMessage = ''
+//         },
+//         receveidMessage(){
+//             setTimeout(() => {
+//                 this.currentContactInfo.messages.push(
+//                     {
+//                         date: '10/01/2020 15:30:55',
+//                         message: 'Halo',
+//                         status: 'received'
+//                     })
+//             }, 1000)
+//         }
+//     }
+// });

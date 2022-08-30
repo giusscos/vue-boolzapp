@@ -13,132 +13,97 @@
 </head>
 <body>
     <div class="boolzapp_wrapper container" id="app">
-        <div class="boolzapp"> <!-- Contenitore App -->
-            <div class="side_bar">
-                <div class="row"> <!-- Barra Profilo -->
-                    <div class="col profile_info"> <!-- Info Profilo -->
-                        <div class="img_wrapper">
-                            <img class="img_profile" src="./img/profile.JPG" alt="Giusscos">
-                        </div>
-                        <div class="name_wrapper">
-                            <span class="name_profile">
-                                Giuseppe
-                            </span>
-                        </div>
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+        <div class="side_bar">
+            <div class="row"> <!-- Barra Profilo -->
+                <div class="col profile_info"> <!-- Info Profilo -->
+                    <div class="img_wrapper">
+                        <img class="img_profile" src="./img/profile.JPG" alt="Giusscos">
                     </div>
-                    <div class="col search-bar_wrapper">
-                        <div class="row search-bar">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova Chat">
-                        </div>
+                    <div class="name_wrapper">
+                        <span class="name_profile">
+                            Giuseppe
+                        </span>
                     </div>
-                </div> <!-- Barra Profilo Fine -->
-                <div class="contact">  <!-- Contatti e Profilo -->
-                    <div class="row contact_wrapper"> <!-- Selezione Contatti -->
-                        <ul class="col chats_list">
-                            <li class="row list_item"
-                                v-for="(contact, i) in contacts"
-                                @click="setChat(i)"
-                                :class="contact.visible ? '' : 'active'"
-                            >
-                                <div class="col img-contact_wrapper">
-                                    <img height="50" 
-                                    :src="contact.avatar" 
-                                    :alt="`Immagine profilo ${contact.name}`"
-                                    >
-                                </div>
-                                <div class="col info-contact_wrapper">
-                                    <span class="name_contact">
-                                        {{ contact.name }}
-                                    </span>
-                                    <span class="last_mex">
-                                        Ultimo messaggio                                           
-                                    </span>
-                                </div>
-                                <div class="col info_time">
-                                    <span class="time">
-                                        12:00
-                                    </span>
-                                </div>
-                            </li>
-                        </ul> <!-- Lista Chats Fine -->
-                    </div> <!-- Selezione Contatti Fine -->
-                </div> <!-- Contatti e Profilo Fine -->
-            </div>
-            <div class="chat">
-                <div class="row profile-contact_wrapper"> <!-- Barra Profilo Contatto -->
-                    <div class="col profile-contact_info"
-                        v-if="getInfo"
-                    > <!-- Info Profilo Contatto -->
-                        <div class="img_wrapper">
-                            <img class="img_profile"
-                            :src="getInfo.avatar" 
-                            :alt="`Immagine profilo di ${getInfo.avatar}`">
-                        </div>
-                        <div class="name_wrapper">
-                            <span class="name_profile">
-                                {{ getInfo.name}}
-                            </span>
-                            <span class="status">
-                                Ultimo accesso alle 12:00
-                            </span>
-                        </div>
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="col search-bar_wrapper">
+                    <div class="row search-bar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div> <!-- Info Profilo Contatto Fine -->
-                    <div class="col profile-contact_info"
-                        v-else
-                    > <!-- Info Profilo Contatto -->
-                        <div class="img_wrapper">
-                        </div>
-                        <div class="name_wrapper">
-                            <span class="name_profile">
-                                Seleziona una Chat!
-                            </span>
-                            <span class="status">
-                            </span>
-                        </div>
-                    </div>
-                </div> <!-- Barra Profilo Contatto Fine -->
-                <div class="chat_wrapper">
-                    <div class="row chat-content_wrapper">
-                        <div class="col mesasges_wrapper"> <!-- Messaggi Chat -->
-                            <ul class="row messages_list">
-                                <li class="col massage_item"
-                                    v-for="chat in getChat"
-                                    :class="chat.status"
-                                >
-                                    <span class="message_text">
-                                        {{ chat.message }}
-                                    </span>
-                                    <span class="message_time">
-                                        {{ chat.date.split(' ')[1].toString() }}
-                                    </span>
-                                </li>
-                            </ul>
-                        </div> <!-- Messaggi Chat Fine -->
-                    </div>
-                </div> <!-- Contenitore Chat Fine-->
-                <div class="row input-text_wrapper">
-                    <div class="col input-emoticon_wrapper">
-                        <i class="fa-regular fa-face-smile"></i>
-                    </div>
-                    <div class="col input-message_wrapper">
-                        <input class="input_message" type="text" placeholder="Scrivi un messaggio"
-                            v-model="typedMessage"
-                            @keyup.enter="sendMessage()"
-                        >
-                    </div>
-                    <div class="col input-message-audio_wrapper">
-                        <i class="fa-solid fa-microphone"></i>
+                        <input type="text" placeholder="Cerca o inizia una nuova Chat">
                     </div>
                 </div>
             </div>
-        </div> <!-- Contenitore App Fine -->
+            <ul class="chats_list">
+                <li class="row list_item"
+                    @click="setCurrentContact(contact)"
+                    v-for="contact in contacts"
+                >
+                    <div class="col img-contact_wrapper">
+                        <img
+                        :src="contact.avatar">
+                    </div>
+                    <div class="col info-contact_wrapper">
+                        <span class="name_contact">
+                            {{ contact.name }}
+                        </span>
+                        <span class="last_mex">
+                            Ultimo messaggio                                           
+                        </span>
+                    </div>
+                    <div class="col info_time">
+                        <span class="time">
+                            12:00
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="chat">
+            <div class="row profile-contact_info">
+                <div class="img_wrapper">
+                    <img class="img_profile"
+                    :src="currentContact.avatar"
+                    >
+                </div>
+                <div class="name_wrapper">
+                    <span class="name_profile">
+                        {{ currentContact.name }}
+                    </span>
+                    <span class="status">
+                        Ultimo accesso alle 12:00
+                    </span>
+                </div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <ul class="row messages_list">
+                <li class="col massage_item" 
+                    v-for="(element, i) in currentContact.messages"
+                    :class="element.status"
+                >
+                    <span class="message_text">
+                        {{ element.message }}
+                    </span>
+                    <span class="message_time">
+                        {{ element.date.split(' ')[1].toString() }}
+                    </span>
+                </li>
+            </ul>
+            <div class="row input-text_wrapper">
+                <div class="col input-emoticon_wrapper">
+                    <i class="fa-regular fa-face-smile"></i>
+                </div>
+                <div class="col input-message_wrapper">
+                    <input class="input_message" type="text" placeholder="Scrivi un messaggio">
+                </div>
+                <div class="col input-message-audio_wrapper">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./js/app.js"></script>
 </body>
