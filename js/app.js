@@ -169,7 +169,7 @@ const app = new Vue({
         currentContactChat: '',
         currentContactInfo: '',
         currentChat: new Array(),
-        typedMessage: ' ',
+        typedMessage: '',
         responseMessage: '',
         i: 0,
     },
